@@ -962,9 +962,9 @@ SitemapController.prototype = {
 							message: 'The request interval must be numeric'
 						},
 						callback: {
-							message: 'The request interval must be atleast 2000 milliseconds',
+							message: 'The request interval must be atleast 500 milliseconds',
 							callback: function(value, validator) {
-								return value >= 2000;
+								return value >= 500;
 							}
 						}
 					}
@@ -978,9 +978,9 @@ SitemapController.prototype = {
 							message: 'The page laod delay must be numeric'
 						},
 						callback: {
-							message: 'The page load delay must be atleast 500 milliseconds',
+							message: 'The page load delay must be atleast 100 milliseconds',
 							callback: function(value, validator) {
-								return value >= 500;
+								return value >= 100 ;
 							}
 						}
 					}
@@ -1042,7 +1042,7 @@ SitemapController.prototype = {
 			$("#viewport").html(dataPanel);
 
 			// display data
-			// Doing this the long way so there aren't xss vulnerubilites 
+			// Doing this the long way so there aren't xss vulnerubilites
 			// while working with data or with the selector titles
 			var $tbody = $("#sitemap-data tbody");
 			data.forEach(function (row) {
@@ -1407,7 +1407,7 @@ SitemapController.prototype = {
 			// remove from validator
 			var validator = this.getFormValidator();
 			validator.removeField($block.find("input"));
-			
+
 			$block.remove();
 		}
 	}
